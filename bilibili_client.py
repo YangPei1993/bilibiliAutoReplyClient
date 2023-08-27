@@ -75,6 +75,7 @@ def comment(oid, parentId, comment):
     status_code_b = res.status_code
     return status_code_b, content
 
+#下面3个参数需要配置cookie、bvid、csrf
 headers = {  # 请求头
     'cookie':"" ,
     'user-agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203"
@@ -83,6 +84,7 @@ bvid = ""
 csrf = ''
 oid = get_video_oid(bvid)
 maxPage = 100000
+#回复id路径，可自定义
 file_name = f'G:/workSpace/chatGLMB2/ChatGLM2-6B/replylogs/{bvid}.csv'
 if os.path.exists(file_name):
     with open(file_name) as f:
